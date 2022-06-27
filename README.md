@@ -50,3 +50,11 @@ git status
 git remote -v
 #gives the details of the origin
                       
+git commit -am "message"
+#Works only on modified files that have already been committed before. It adds the files to the staging area and commits at the same time.
+#But the file must have been committed before
+
+git stash
+#stash your added files somewhere and thus no need to commit the  files
+
+
