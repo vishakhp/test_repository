@@ -47,5 +47,6 @@ git push origin feature
 git status
 #returns the current  status of the files on your git repository
 
-
+git remote -v
+#gives the details of the origin
                       
