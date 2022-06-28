@@ -9,13 +9,12 @@ git commit -m "Adding file1, file2, file3"
 git status
 
 git add .
-#Adds all file contents to the index. Updates the index using the current content found in the working tree, to prepare the  content staged for the next commit. The index holds a snapshot of the
-#content of the working tree, and it is this snapshot that is taken as the  contents of the next commit
+##Adds all file contents to the index. Updates the index using the current content found in the working tree, to #prepare the  content staged for the next commit. The index holds a snapshot of the #content of the working tree, and it is this snapshot that is taken as the  contents of the next commit
 
 git add names.txt
 
 git push -u origin main
-#pushes the  committed filed in the local repository to the remote repository at the url specified by the origin (set using url data given on the github website) and on the branch specified as main
+#pushes the  committed filed in the local repository to the remote repository at the url specified by the origin #(set using url data given on the github website) and on the branch specified as main
 
 git remote add origin git@github.com:vishakhp/test_repository.git 
 #For adding a new origin (i.e. a repository url/ssh)
@@ -36,9 +35,7 @@ git checkout -b dev2
 git branch -d feature # removes the branch named feature
 
 git pull origin main 
-# Suppose you have merged a feature branch with the main branch and now you have merged it onto the main branch as
-#well. But, in your local repository, the changes will not reflect by itself. you have to create a pull request now
-#from the origin on the main branch onto your local repository
+# Suppose you have merged a feature branch with the main branch and now you have merged it onto the main branch as well. But, in your local repository, the changes will not reflect by itself. you have to create a pull request now from the origin on the main branch onto your local repository
 
 git checkout main
 #swtiches the current branch to the branch - main
