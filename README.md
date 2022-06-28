@@ -134,3 +134,19 @@ sudo service docker stop
 #Instructs the docker to stop
 
 #A container is a running instance of an image
+
+sudo docker images
+#REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+#nginx         latest    55f4b40fe486   5 days ago     142MB
+#fedora        latest    98ffdbffd207   6 weeks ago    163MB
+#hello-world   latest    feb5d9fea6a5   9 months ago   13.3kB
+
+sudo docker run nginx:latest
+
+sudo docker container ls
+
+sudo docker run -d nginx:latest 
+#run this container in detached mode
+
+sudo docker ps
+#displays list of running containers
