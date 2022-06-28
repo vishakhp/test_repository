@@ -133,3 +133,4 @@ sudo service docker status
 sudo service docker stop
 #Instructs the docker to stop
 
+#A container is a running instance of an image
