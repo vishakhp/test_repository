@@ -146,7 +146,30 @@ sudo docker run nginx:latest
 sudo docker container ls
 
 sudo docker run -d nginx:latest 
-#run this container in detached mode
+#The flag -d runs this container in detached mode i.e. in the background
 
 sudo docker ps
 #displays list of running containers
+
+sudo docker container ls
+#CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS     NAMES
+#48d63da9488a   nginx:latest   "/docker-entrypoint.…"   15 seconds ago   Up 13 seconds   80/tcp    busy_turing
+
+sudo docker stop 48d63da9488a
+#stops the container with the above container id
+
+sudo docker run -d -p 8080:80 nginx:latest
+#maps the host port on our local host computer via the port 8080 to the port 80 on the container port. -p is the #port flag. Instead of port 8080, we could use port 3000 also. Infact both ports 3000 and 8080 on our local host computer can be mapped to the port 80 on the container through the use of the following command:
+
+sudo docker run -d -p 8080:80 -p 3000:80 nginx:latest
+
+sudo docker ps
+#CONTAINER ID   IMAGE          COMMAND                  CREATED              STATUS              PORTS                                                                          NAMES
+#2d0b7be290e9   nginx:latest   "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:3000-
+#>80/tcp, 0.0.0.0:8080->80/tcp, :::3000->80/tcp, :::8080->80/tcp   suspicious_jepsen
+
+#We can see that the local host port 8080 is connected to the container port 80
+
+#Docker  can also be stopped in the following way:
+sudo docker stop suspicious_jepsen
+
