@@ -27,6 +27,12 @@ git branch -M main
 
 git branch # gives the current branch
 
+git branch dev1
+#creates a new branch called dev1
+
+git checkout -b dev2
+#creates a new branch called dev2 and switches to dev2 also.
+
 git branch -d feature # removes the branch named feature
 
 git pull origin main 
@@ -39,6 +45,9 @@ git checkout main
 
 git branch
 #Outputs the current branch
+
+git branch dev1
+#Creates a branch called dev1
 
 git push origin feature
 #pushes code on your local respository to the origin URL(which is available as SSH URL on the website) with the 
@@ -57,4 +66,11 @@ git commit -am "message"
 git stash
 #stash your added files somewhere and thus no need to commit the  files
 
+git reset file1.txt
+#unstages the added file (which was added to stage via the command add file1.txt)
 
+git reset HEAD~1
+#HEAD is the pointer to the last commit. This command undoes the last done commit. HEAD will point to one commit further and hence ignores the latest commit
+
+git log
+#gives the log of all the recent changes including commits. Use the commit ids to reset to a particular change.
