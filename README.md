@@ -71,3 +71,13 @@ git reset HEAD~1
 
 git log
 #gives the log of all the recent changes including commits. Use the commit ids to reset to a particular change.
+
+sudo service docker start 
+#starts the docker with administrator permission
+
+sudo service docker status
+#gives the docker running status
+
+sudo service docker stop
+#Instructs the docker to stop
+
