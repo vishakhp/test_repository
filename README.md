@@ -208,7 +208,7 @@ docker container ls
 
 docker ps
 
-# To stop a container : docker stop <container id> . The container id can be obtained when we type in docker ps
+# To stop a container : docker stop \<container id\> . The container id can be obtained when we type in docker ps
 
 #Example : 
 
@@ -221,3 +221,73 @@ docker stop d81b004d8b73
   
 docker ps
 #CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+docker run -dp 8080:80 nginx:latest
+#Itnow maps the address 8080 to the port 80 on our local machine on which docker is running
+
+docker run -dp 3000:80 -p 8080:80 nginx:latest
+#maps both local hosts 3000 and 8080 to our ports on the computer in which docker is running.
+
+docker start 5d7253a56409
+#To start a container again where 5d7253a56409 was the container ID.
+
+# ##################################################
+docker ps --help
+
+#Usage:  docker ps [OPTIONS]
+
+#List containers
+
+#Options:
+#  -a, --all             Show all containers (default
+                        shows just running)
+#  -f, --filter filter   Filter output based on
+                        conditions provided
+#      --format string   Pretty-print containers using
+                        a Go template
+#  -n, --last int        Show n last created containers
+                        (includes all states) (default -1)
+#  -l, --latest          Show the latest created
+                        container (includes all states)
+#      --no-trunc        Don't truncate output
+#  -q, --quiet           Only display container IDs
+#  -s, --size            Display total file sizes
+
+# To remove a container
+docker rm 5d7253a56409
+
+docker ps -aq 
+# q for quiet, displays only numeric signs
+a0fba9a9004d
+c899fce123d1
+d81b004d8b73
+b0db9b5e9742
+2d0b7be290e9
+f3f75da411a9
+48d63da9488a
+47934ad6c62f
+287565ddcccb
+
+# To remove many containers, (but this does not work for a container which is currently running)
+docker rm $(docker ps -aq)
+#0fba9a9004d
+#899fce123d1
+#81b004d8b73
+#0db9b5e9742
+#d0b7be290e9
+#3f75da411a9
+#8d63da9488a
+#7934ad6c62f
+#87565ddcccb
+
+# To force remove (say a running container) 
+docker rm -f $(docker ps -aq)
+
+# Naming a container
+docker run --name c_name1 -dp 3000:80 -p 8080:80 nginx:latest
+
+# Now you can stop this container as :
+docker start c_name1
+
+# To start it again
+docker start c_name1
