@@ -124,6 +124,15 @@ git reset HEAD~1
 git log
 #gives the log of all the recent changes including commits. Use the commit ids to reset to a particular change.
 
+#If you receive an error message while running the command : sudo docker ps 
+#"Got permission denied while trying to connect to #the Docker daemon socket at unix:///var/run/docker.sock: Get #"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json": dial unix /var/run/docker.sock: connect: permission #denied", then do the following commands
+
+sudo usermod -a -G docker vishak
+grep docker /etc/group
+newgrp docker
+
+################################
+
 sudo service docker start
 #starts the docker with administrator permission
 
