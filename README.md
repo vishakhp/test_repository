@@ -182,3 +182,30 @@ sudo docker ps
 #Docker  can also be stopped in the following way:
 sudo docker stop suspicious_jepsen
 
+#############################################################################################################
+#nginx is a web server company 
+
+docker pull nginx 
+#pulls the image of nginx . An image is a collection of all requirements like OS,dependencies for nginx to run
+#successfully
+
+docker images
+#To see a list of all images. The latest tag shows the latest image that was installed.
+
+# A container is a running instance of an image.
+#To run a container from the image which we created just :
+
+docker run nginx:latest
+
+# But to run a container in the background i.e. in detached mode , run the following command:
+docker run -d nginx:latest
+
+# To see a list of all running containers
+docker container ls
+##############################################################
+
+# The more preferred way to see the list of running containers is :
+
+docker ps
+
+
