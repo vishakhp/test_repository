@@ -287,7 +287,20 @@ docker rm -f $(docker ps -aq)
 docker run --name c_name1 -dp 3000:80 -p 8080:80 nginx:latest
 
 # Now you can stop this container as :
-docker start c_name1
+docker stop c_name1
 
 # To start it again
 docker start c_name1
+
+# To assign a name to a container
+docker run --name c_name2 -dp 8080:80 nginx:latest
+docker run --name c_name2 -dp 9000:90 -p 8080:80 nginx:latest
+ 
+# To change the output format of the command docker ps to a better one
+docker ps --format="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+
+# or
+export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Co
+mmand}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+
+docker ps --format=$FORMAT
