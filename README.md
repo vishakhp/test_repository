@@ -208,4 +208,16 @@ docker container ls
 
 docker ps
 
+# To stop a container : docker stop <container id> . The container id can be obtained when we type in docker ps
 
+#Example : 
+
+  docker ps
+
+#CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS     NAMES
+#d81b004d8b73   nginx:latest   "/docker-entrypoint.…"   5 minutes ago   Up 5 minutes   80/tcp    hungry_kapitsa
+
+docker stop d81b004d8b73
+  
+docker ps
+#CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
