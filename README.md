@@ -332,3 +332,7 @@ touch about.html # is created in the docker host as well as gets reflected in th
 
 # Now we will share volumes between containers
 docker run --name website-copy --volumes-from website -dp 8081:80 nginx
+
+# When you want to create a custom image, there is no need to mount a volume from the host to the actual container. But, images must contain everything that your application needs to run. An image is a template for creating an environment of your choice. 
+
+#Often you will not build an image completely from scratch. Very often, we will extend an existing image and create a custom image. A dockerfile contains details of all the packages which we need for our application to run smoothly. A Dockerfile has no extension . if your using docker on docker on windows use notepad ++ to create a dockerfile while saving select “All type “ and save the file name as “Dockerfile”
