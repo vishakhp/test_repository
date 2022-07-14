@@ -304,3 +304,8 @@ export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports
 mmand}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
 
 docker ps --format=$FORMAT
+
+# mount the folder called website whose pwd is given by /home/vishak/git_test_project/test_repository/website to /usr/share/nginx/html <--- this is specified on the docker hub website for nginx 
+
+docker run --name website -v $(pwd):/usr/share/nginx/html -dp 8080:80 nginx:latest
+# the contents are mounted. So, whenever you do some changes to the file index.html, changes are automatically reflected in the docker host.
