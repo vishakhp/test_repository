@@ -326,4 +326,5 @@ ls
 touch about.html # is created in the docker host as well as gets reflected in the local host as well
 
 # THIS IS HOW YOU SHARE FILES BETWEEN HOST AND CONTAINER USING VOLUMES
+
 # to exit the container, press control + d
