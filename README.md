@@ -331,4 +331,4 @@ touch about.html # is created in the docker host as well as gets reflected in th
 # to exit the container, press control + d
 
 # Now we will share volumes between containers
-
+docker run --name website-copy --volumes-from website -dp 8081:80 nginx
