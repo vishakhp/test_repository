@@ -319,5 +319,11 @@ docker exec -it website bash
 # to check the file which we had previously mounted
 
 cd usr/share/nginx/html
- 
+ls
+
+# Now if you create an another file here, it will get reflected in your local machine host computer as well
+
+touch about.html # is created in the docker host as well as gets reflected in the local host as well
+
+# THIS IS HOW YOU SHARE FILES BETWEEN HOST AND CONTAINER USING VOLUMES
 # to exit the container, press control + d
