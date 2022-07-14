@@ -309,3 +309,15 @@ docker ps --format=$FORMAT
 
 docker run --name website -v $(pwd):/usr/share/nginx/html -dp 8080:80 nginx:latest
 # the contents are mounted. So, whenever you do some changes to the file index.html, changes are automatically reflected in the docker host.
+
+# if you have a file inside the container ( the container is present in the docker host), then that also gets reflected in the local computer host).
+
+#The following command takes us inside the running container inside the docker host and presents a linux file stucture
+
+docker exec -it website bash
+
+# to check the file which we had previously mounted
+
+cd usr/share/nginx/html
+ 
+# to exit the container, press control + d
