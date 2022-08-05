@@ -311,6 +311,10 @@ docker ps --format=$FORMAT
 docker run --name website -v $(pwd):/usr/share/nginx/html -dp 8080:80 nginx:latest
 # the contents are mounted. So, whenever you do some changes to the file index.html, changes are automatically reflected in the docker host.
 
+# Another way to create a container
+
+#sudo docker run -itd --name container_archlinux -p 8080:80 archlinux:latest
+
 # if you have a file inside the container ( the container is present in the docker host), then that also gets reflected in the local computer host).
 
 #The following command takes us inside the running container inside the docker host and presents a linux file stucture
