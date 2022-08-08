@@ -311,6 +311,10 @@ docker ps --format=$FORMAT
 docker run --name website -v $(pwd):/usr/share/nginx/html -dp 8080:80 nginx:latest
 # the contents are mounted. So, whenever you do some changes to the file index.html, changes are automatically reflected in the docker host.
 
+You can restart an existing container after it exited and your changes are still there.
+
+ocker start `docker ps -q -l` && docker attach `docker ps -q -l`
+
 # Another way to create a container
 
 #sudo docker run -itd --name container_archlinux -p 8080:80 archlinux:latest
